@@ -70,16 +70,16 @@ class matrix
             int i,j;
             for(i=0;i<m;i++)
             {
-				cout<<'\t';
-				cout<<'\t';
+		cout<<'\t';
+		cout<<'\t';
                 for(j=0;j<n;j++)
                 {
-					if(boa[i][j].ch == 'X')
-						cout << BOLDCYAN << "X" << RESET;
-					else if(boa[i][j].vis)
-						cout<< RED<< boa[i][j].ch << RESET;
-					else
-						cout<< boa[i][j].ch;
+			if(boa[i][j].ch == 'X')
+				cout << BOLDCYAN << "X" << RESET;
+			else if(boa[i][j].vis)
+				cout<< RED<< boa[i][j].ch << RESET;
+			else
+				cout<< boa[i][j].ch;
                 }
                 cout<<'\n';    
             }
@@ -109,14 +109,14 @@ class matrix
                     boa[x+1][y].prev={x,y};//update previous 
                     q.push({x+1,y});//push to the queue
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
-					if(x+1 == end.first && y == end.second)
-						break;
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
+		    if(x+1 == end.first && y == end.second)
+			break;
 				
                 }
                 if(x!=0 && boa[x-1][y].vis==false && boa[x-1][y].ch!='X')
@@ -125,14 +125,14 @@ class matrix
                     boa[x-1][y].prev={x,y};
                     q.push({x-1,y});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
-					if(x-1 == end.first && y == end.second)
-						break;
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
+		    if(x-1 == end.first && y == end.second)
+			break;
                 }
                 if(y!=n-1 && boa[x][y+1].vis==false && boa[x][y+1].ch!='X')
                 {
@@ -140,14 +140,14 @@ class matrix
                     boa[x][y+1].prev={x,y};
                     q.push({x,y+1});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
-					if(x == end.first && y+1 == end.second)
-						break;
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
+		    if(x == end.first && y+1 == end.second)
+			break;
                 }
                 if(y!=0 && boa[x][y-1].vis==false && boa[x][y-1].ch!='X')
                 {
@@ -155,14 +155,14 @@ class matrix
                     boa[x][y-1].prev={x,y};
                     q.push({x,y-1});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
-					if(x == end.first && y-1 == end.second)
-						break;
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tBREADTH FIRST SEARCH ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
+		    if(x == end.first && y-1 == end.second)
+			break;
                 }
             }
             if(boa[end.first][end.second].vis==false)//No path exist
@@ -172,28 +172,28 @@ class matrix
             }
             else
             {
-				for(i=0,cnt=0;i<m;i++)
-				{
-					for(j=0;j<n;j++)
-					{
-						if(boa[i][j].vis)
-							cnt++;
-					}
-				}
-				cout<<'\n';
-				cout<<"\t\tNumber of visited cells = "<<cnt<<'\n';
-				sleep_until(system_clock::now() + 3000ms); //delay
+		for(i=0,cnt=0;i<m;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				if(boa[i][j].vis)
+					cnt++;
 			}
+		}
+		cout<<'\n';
+		cout<<"\t\tNumber of visited cells = "<<cnt<<'\n';
+		sleep_until(system_clock::now() + 3000ms); //delay
+	    }
         }
         
         double dist(int x,int y)
         {
-			return sqrt((end.first - x)*(end.first - x) + (end.second -y)*(end.second -y));
-		}
+		return sqrt((end.first - x)*(end.first - x) + (end.second -y)*(end.second -y));
+	}
         
         void astar()
         {
-			using namespace std::this_thread;     // sleep_for, sleep_until
+	    using namespace std::this_thread;     // sleep_for, sleep_until
             using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
             using std::chrono::system_clock;
             int i,x,y,j,cnt;
@@ -205,7 +205,7 @@ class matrix
             boa[start.first][start.second].vis=true;
             while(!pq.empty() && pq.top().second > 0)
             {
-				p=pq.top();
+		p=pq.top();
                 pq.pop();
                 x=p.first.first;
                 y=p.first.second;
@@ -216,12 +216,12 @@ class matrix
                     d=dist(x+1,y);
                     pq.push({{x+1,y},d});//push to the queue
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tA-STAR ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting				
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tA-STAR ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting				
                 }
                 if(x!=0 && boa[x-1][y].vis==false && boa[x-1][y].ch!='X')
                 {
@@ -230,12 +230,12 @@ class matrix
                     d=dist(x-1,y);
                     pq.push({{x-1,y},d});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tA-STAR ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tA-STAR ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
                 }
                 if(y!=n-1 && boa[x][y+1].vis==false && boa[x][y+1].ch!='X')
                 {
@@ -244,12 +244,12 @@ class matrix
                     d=dist(x,y+1);
                     pq.push({{x,y+1},d});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tA-STAR ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tA-STAR ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
                 }
                 if(y!=0 && boa[x][y-1].vis==false && boa[x][y-1].ch!='X')
                 {
@@ -258,34 +258,34 @@ class matrix
                     d=dist(x,y-1);
                     pq.push({{x,y-1},d});
                     sleep_until(system_clock::now() + 100ms); //delay
-					system("clear");//clearing the screen
-					cout<<"\n\n";
-					cout<<"\t\tA-STAR ALGORITHM"<<'\n';
-					cout<<'\n';
-					cout<<'\n';
-					print();    //reprinting
+		    system("clear");//clearing the screen
+		    cout<<"\n\n";
+		    cout<<"\t\tA-STAR ALGORITHM"<<'\n';
+		    cout<<'\n';
+		    cout<<'\n';
+		    print();    //reprinting
                 }
-			}
-			if(pq.empty())
-			{
-				cout<<"\t\tThere's no path that connects starting point to destination!!!"<<'\n';
+	    }
+	    if(pq.empty())
+	    {
+		cout<<"\t\tThere's no path that connects starting point to destination!!!"<<'\n';
                 return ;
-			}
-			else
+	    }
+	    else
             {
-				for(i=0,cnt=0;i<m;i++)
-				{
-					for(j=0;j<n;j++)
-					{
-						if(boa[i][j].vis)
-							cnt++;
-					}
-				}
-				cout<<'\n';
-				cout<<"\t\tNumber of visited cells = "<<cnt<<'\n';
-				sleep_until(system_clock::now() + 3000ms); //delay
+		for(i=0,cnt=0;i<m;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				if(boa[i][j].vis)
+					cnt++;
 			}
 		}
+		cout<<'\n';
+		cout<<"\t\tNumber of visited cells = "<<cnt<<'\n';
+		sleep_until(system_clock::now() + 3000ms); //delay
+	     }
+	}
 };
 
 int main()
