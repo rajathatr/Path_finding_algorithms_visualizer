@@ -19,8 +19,18 @@ A* (A-start) : Greedy Searching algorithm where neighbouring cells are explored 
 ![](astar.gif)
 
 
-A* algorithm shines when the presence of obstacles are sparse.\
+A* algorithm shines when the presence of obstacle is sparse.\
 The number of visited cells for\
 BFS = 816\
+A* = 214
+
+However when the presence of obstacle is dense, difference between the performance of A* and BFS is reduced. Still A* outperforms BFS in most of the cases.\
+The number of visited cells for\
+BFS = 334\
 A* = 216
+
+
  
+![](bfs_3.gif)
+
+![](astar_3.gif)
