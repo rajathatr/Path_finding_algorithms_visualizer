@@ -15,7 +15,12 @@ A* (A-start) : Greedy Searching algorithm where neighbouring cells are explored 
 
 
 ![](bfs.gif)
-BFS
 
 ![](astar.gif)
-A*
+
+
+A* algorithm shines when the presence of obstacles are sparse.\
+The number of visited cells for\
+BFS = 816\
+A* = 216
+ 
